@@ -1,1 +1,1 @@
-# RNInstagramClone
+# instagramClone
