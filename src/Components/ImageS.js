@@ -12,12 +12,7 @@ const ImageS = (props) => {
 
     return (
         <View style={props.styleHomePage ? styles.containerHome : styles.containerGrid}>
-            {
-                props.styleHomePage ?
-                    <View style={styles.homePageHeaderContainer}>
-                        <Text style={styles.headerTextStyle}>{props.name}</Text>
-                    </View>
-                    : null}
+           
             <View style={props.styleHomePage ? null : styles.gridViewFlatlistContainer}>
                 <FlatList
                     data={props.data}
@@ -26,9 +21,6 @@ const ImageS = (props) => {
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => (
                         <View style={styles.renderContainer}>
-                        <Image
-                            style={{}} 
-                            source={{ uri: item }}/>
                           <Image
                             style={
                                 props.styleHomePage ? styles.imageStyleHomePage : styles.imageStyleGridViewPage
@@ -56,21 +48,21 @@ const styles = StyleSheet.create({
     },
     imageStyleGridViewPage: {
         width: Dimensions.get('window').width / 2.2,
-        height: Dimensions.get('window').height / 2.2,
+        height: Dimensions.get('window').height / 2.9,
         marginLeft:10
     },
     gridViewFlatlistContainer: {
         width: Dimensions.get('window').width / 2.2, 
-        height: Dimensions.get('window').height / 2.5,
+        height: Dimensions.get('window').height / 2.4,
         overflow: 'hidden',
         marginVertical: 10
     },
     renderContainer: {
         flex: 1,
-        marginTop:50
+        marginTop:60
     },
     homePageHeaderContainer: {
-        height: 40,
+        height: 30,
         width: Dimensions.get('window').width / 1,
         justifyContent: 'center'
     },
@@ -78,7 +70,11 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginLeft: 20,
         fontWeight: 'bold'
-    }
+    },
+    imageStyle: {
+        
+
+    },
 
 });
 export { ImageS }
